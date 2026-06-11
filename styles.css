@@ -86,7 +86,9 @@ main {
   display: grid;
   place-items: center;
   padding: 5rem 1.5rem 5rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.6));
+  background:
+    linear-gradient(90deg, rgba(18, 15, 13, 0.88), rgba(18, 15, 13, 0.62)),
+    url("assets/img/backgrounds/bg-gala-dark.png") center / cover no-repeat;
 }
 
 .hero-inner {
@@ -257,7 +259,9 @@ li {
 
 /* Make history section lighter like an invitation paper */
 .history-section {
-  background: var(--surface);
+  background:
+    linear-gradient(90deg, rgba(247, 239, 229, 0.92), rgba(247, 239, 229, 0.82)),
+    url("assets/img/backgrounds/bg-paper-story.png") center / cover no-repeat;
   color: var(--text-dark);
 }
 
@@ -340,6 +344,12 @@ li {
   align-items: start;
 }
 
+.dresscode-section {
+  background:
+    linear-gradient(90deg, rgba(18, 15, 13, 0.82), rgba(111, 29, 45, 0.58)),
+    url("assets/img/backgrounds/bg-dresscode-fabric.png") center / cover no-repeat;
+}
+
 .dresscode-copy {
   display: grid;
   gap: 1rem;
@@ -416,7 +426,8 @@ li {
 /* Venue / Castillo section */
 .venue-section {
   background:
-    linear-gradient(135deg, rgba(24, 55, 47, 0.96), rgba(18, 15, 13, 0.96) 48%, rgba(111, 29, 45, 0.86));
+    linear-gradient(90deg, rgba(18, 15, 13, 0.82), rgba(24, 55, 47, 0.72)),
+    url("assets/img/backgrounds/bg-castillo.png") center / cover no-repeat;
   border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -507,7 +518,9 @@ li {
 
 /* Timeline section styles */
 .timeline-section {
-  background: linear-gradient(180deg, rgba(27,23,20,0.96), rgba(18,15,13,0.96));
+  background:
+    linear-gradient(90deg, rgba(18, 15, 13, 0.86), rgba(18, 15, 13, 0.66)),
+    url("assets/img/backgrounds/bg-night-water.png") center / cover no-repeat;
   border-radius: 22px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);

@@ -1,6 +1,6 @@
-# IsmaelyJuan
+# IsmaelJuan
 
-Sitio web estático para la boda de Ismaely & Juangui, con estructura sencilla tipo Joy/Minted: portada, detalles, RSVP, dress code y galería.
+Sitio web estático para la boda de Ismael & Juangui, con estructura sencilla tipo Joy/Minted: portada, detalles, RSVP, dress code y galería.
 
 ## Contenido actual
 
