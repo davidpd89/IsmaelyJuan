@@ -311,6 +311,48 @@ li {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* Timeline section styles */
+.timeline-section {
+  background: var(--surface);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.timeline-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  background: #fffaf4;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.timeline-item h3 {
+  margin: 0 0 0.5rem;
+  color: var(--accent-dark);
+}
+
+/* Hashtag style for sharing */
+.hashtag {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+.hashtag .tag {
+  color: var(--wine);
+  font-weight: 900;
+  margin-left: 0.35rem;
+}
+
 .gallery-card {
   overflow: hidden;
   border-radius: 28px;
@@ -393,6 +435,10 @@ li {
   .gallery-grid,
   .contact-cards,
   .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-grid {
     grid-template-columns: 1fr;
   }
 
