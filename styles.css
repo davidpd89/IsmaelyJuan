@@ -252,6 +252,11 @@ li {
 .history-section .photo-card {
   background: #fff;
 }
+
+.history-section,
+.dresscode-section,
+.contact-section,
+.note-section,
 .faq-section {
   padding: 2.5rem;
 }
@@ -416,13 +421,9 @@ li {
 }
 
 .timeline-item h3 {
+  margin: 0 0 0.5rem;
   color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
-}
-
-.timeline-item h3 {
-  margin: 0 0 0.5rem;
-  color: var(--accent-dark);
 }
 
 /* Hashtag style for sharing */
