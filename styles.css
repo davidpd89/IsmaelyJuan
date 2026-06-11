@@ -1,17 +1,19 @@
 
 :root {
-  --bg: #f7efe5;
-  --surface: #fffaf4;
-  --text: #241f1b;
-  --muted: #766d64;
-  --accent: #9f6744;
-  --accent-dark: #56351f;
+  --bg: #120f0d;
+  --surface: #f7efe5;
+  --surface-dark: #1b1714;
+  --text: #f7efe5;
+  --text-dark: #241f1b;
+  --muted: #b9aa9d;
+  --accent: #c49a5a;
+  --accent-dark: #8b5e34;
   --wine: #6f1d2d;
   --green: #18372f;
+  --black: #090807;
   --gold: #c49a5a;
-  --border: rgba(86, 53, 31, 0.14);
-  --shadow: 0 24px 45px rgba(36, 27, 21, 0.12);
-}
+  --border: rgba(196, 154, 90, 0.22);
+  --shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
 
 * {
   box-sizing: border-box;
@@ -29,6 +31,30 @@ body {
   color: var(--text);
   position: relative;
   line-height: 1.7;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Editorial headings */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--surface);
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.28em;
+  font-weight: 700;
 }
 
 body::before {
@@ -53,7 +79,8 @@ main {
 .hero {
   display: grid;
   place-items: center;
-  padding: 4rem 1.5rem 5rem;
+  padding: 5rem 1.5rem 5rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.6));
 }
 
 .hero-inner {
@@ -63,6 +90,33 @@ main {
   gap: 2rem;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
+}
+
+.hero-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(196,154,90,0.45);
+  box-shadow: 0 34px 80px rgba(0,0,0,0.55);
+}
+
+.hero-copy h1 {
+  color: var(--surface);
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+.hero-note {
+  color: var(--muted);
+}
+
+.hero-actions .button {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--surface);
+  border: 1px solid rgba(196,154,90,0.45);
 }
 
 .hero-copy {
@@ -169,15 +223,15 @@ li {
 }
 
 .card {
-  background: var(--surface);
-  border-radius: 28px;
+  background: var(--surface-dark);
+  border-radius: 22px;
   padding: 2rem;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
 
 .card-quiet {
-  background: #fffaf4;
+  background: linear-gradient(180deg, rgba(31,26,24,0.95), rgba(27,23,20,0.9));
 }
 
 .history-section,
@@ -186,11 +240,26 @@ li {
 .note-section,
 .faq-section,
 .gallery {
-  background: var(--surface);
-  border-radius: 32px;
+  background: var(--surface-dark);
+  border-radius: 22px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
+
+/* Make history section lighter like an invitation paper */
+.history-section {
+  background: var(--surface);
+  color: var(--text-dark);
+}
+
+.history-section p,
+.history-section .eyebrow,
+.history-section h2 {
+  color: var(--text-dark);
+}
+
+.history-section .photo-card {
+  background: #fff;
 
 .history-section,
 .dresscode-section,
@@ -309,6 +378,20 @@ li {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Make first gallery item larger for editorial layout */
+.gallery-grid > .gallery-card:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.dresscode-quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  line-height: 1.05;
+  color: var(--gold);
+  margin: 0 0 1rem;
 }
 
 /* Timeline section styles */
@@ -471,5 +554,13 @@ li {
 
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.2rem;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.25rem;
   }
 }
