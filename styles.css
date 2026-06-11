@@ -14,6 +14,7 @@
   --gold: #c49a5a;
   --border: rgba(196, 154, 90, 0.22);
   --shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
 
 * {
   box-sizing: border-box;
@@ -52,17 +53,22 @@ h2 {
 }
 
 .eyebrow {
-  color: var(--gold);
+  margin: 0 0 1rem;
+  text-transform: uppercase;
   letter-spacing: 0.28em;
+  color: var(--gold);
   font-weight: 700;
+  font-size: 0.85rem;
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(196, 154, 90, 0.12), transparent 24%),
-              linear-gradient(180deg, rgba(255, 250, 244, 0.9), rgba(247, 239, 229, 0.9));
+  background:
+    radial-gradient(circle at top left, rgba(196, 154, 90, 0.16), transparent 26%),
+    radial-gradient(circle at 80% 10%, rgba(111, 29, 45, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(24, 55, 47, 0.24), transparent 30%);
   pointer-events: none;
   z-index: -1;
 }
@@ -123,15 +129,6 @@ main {
   text-align: left;
 }
 
-.eyebrow {
-  margin: 0 0 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--wine);
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-
 .hero h1 {
   margin: 0;
   font-size: clamp(3rem, 5vw, 5rem);
@@ -172,12 +169,6 @@ main {
 
 .button:hover {
   transform: translateY(-2px);
-}
-
-.button-secondary {
-  background: transparent;
-  color: var(--wine);
-  border: 1px solid rgba(86, 53, 31, 0.2);
 }
 
 .container {
@@ -260,11 +251,7 @@ li {
 
 .history-section .photo-card {
   background: #fff;
-
-.history-section,
-.dresscode-section,
-.contact-section,
-.note-section,
+}
 .faq-section {
   padding: 2.5rem;
 }
@@ -396,12 +383,21 @@ li {
 
 /* Timeline section styles */
 .timeline-section {
-  background: var(--surface);
-  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(27,23,20,0.96), rgba(18,15,13,0.96));
+  border-radius: 22px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  padding: 2rem;
+  padding: 2.5rem;
   margin-top: 1.5rem;
+}
+
+.timeline-section p {
+  color: var(--muted);
+}
+
+.timeline-section h2,
+.timeline-section h3 {
+  color: var(--surface);
 }
 
 .timeline-grid {
@@ -412,11 +408,16 @@ li {
 }
 
 .timeline-item {
-  background: #fffaf4;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1rem;
+  background: rgba(247, 239, 229, 0.06);
+  border: 1px solid rgba(196, 154, 90, 0.28);
+  border-radius: 18px;
+  padding: 1.25rem;
   text-align: center;
+}
+
+.timeline-item h3 {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .timeline-item h3 {
