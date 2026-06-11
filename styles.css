@@ -413,6 +413,98 @@ li {
   margin: 0;
 }
 
+/* Venue / Castillo section */
+.venue-section {
+  background:
+    linear-gradient(135deg, rgba(24, 55, 47, 0.96), rgba(18, 15, 13, 0.96) 48%, rgba(111, 29, 45, 0.86));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.venue-copy p {
+  color: var(--muted);
+}
+
+.venue-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.venue-facts span {
+  border: 1px solid rgba(196, 154, 90, 0.35);
+  border-radius: 999px;
+  color: var(--surface);
+  background: rgba(247, 239, 229, 0.06);
+  padding: 0.55rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.venue-visual {
+  min-height: 360px;
+  border-radius: 18px;
+  border: 1px solid rgba(196, 154, 90, 0.42);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(196, 154, 90, 0.2), transparent 28%),
+    linear-gradient(160deg, rgba(9, 8, 7, 0.45), rgba(9, 8, 7, 0.82)),
+    linear-gradient(135deg, var(--green), var(--wine));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.venue-visual::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(196, 154, 90, 0.22);
+  border-radius: 999px 999px 18px 18px;
+}
+
+.venue-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--surface);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.venue-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.venue-kicker {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .venue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-visual {
+    min-height: 280px;
+  }
+}
+
 /* Timeline section styles */
 .timeline-section {
   background: linear-gradient(180deg, rgba(27,23,20,0.96), rgba(18,15,13,0.96));
