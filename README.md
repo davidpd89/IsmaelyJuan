@@ -1,22 +1,27 @@
 # IsmaelyJuan
 
-Sitio web sencillo para la boda de Ismaely y Juan.
+Sitio web estático para la boda de Ismaely & Juangui, con estructura sencilla tipo Joy/Minted: portada, detalles, RSVP, dress code y galería.
 
-## Qué incluye
+## Contenido actual
 
-- Página estática en `index.html`
-- Estilos responsive en `styles.css`
-- Diseño pensado para móvil y escritorio
+- `index.html` — página principal con información del evento
+- `styles.css` — estilos responsive para móvil y escritorio
+- `dresscode.pdf` — PDF de código de vestimenta
+- `images/` — carpeta creada para futuras fotos
 
-## Cómo usar
+## Cómo verlo
 
-1. Abrir `index.html` en el navegador.
-2. Cambiar la información en la sección "Detalles del evento".
-3. Añadir fotos en una carpeta `images/` y referenciarlas desde `index.html`.
+1. Abre `index.html` en un navegador.
+2. Alternativamente, usa un servidor local simple si quieres revisarlo en `http://localhost`.
 
-## Siguientes pasos
+## Cómo actualizar
 
-- Añadir fecha y lugar de la ceremonia
-- Incluir el menú y la agenda de la celebración
-- Crear una sección de confirmación de asistencia
-- Subir fotos de los novios y del compromiso
+- Cambia el texto directamente en `index.html`.
+- Añade fotos en `images/`.
+- Si quieres, puedo integrar tus imágenes como `images/tu-foto.webp` con un diseño de galería.
+
+## Siguiente paso
+
+- Añadir alojamiento y opciones de traslado
+- Incorporar más fotos de la pareja y del compromiso
+- Poner un enlace de confirmación estilo RSVP cuando tengamos la lista de invitados
