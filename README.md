@@ -18,7 +18,20 @@ Sitio web estático para la boda de Ismaely & Juangui, con estructura sencilla t
 
 - Cambia el texto directamente en `index.html`.
 - Añade fotos en `images/`.
-- Si quieres, puedo integrar tus imágenes como `images/tu-foto.webp` con un diseño de galería.
+- Si quieres, puedo integrar tus imágenes como `images/hero.webp`, `images/history.webp`, `images/dresscode-moodboard.webp` y `images/gallery-1.webp`.
+
+## Imágenes sugeridas y prompts
+
+Puedes generar estas imágenes con GPT o tu herramienta favorita:
+
+1. `images/hero.webp`
+   - Prompt: "Pareja elegante en un castillo español al atardecer, estilo editorial de boda, tonos cálidos, fondo suave y mucha luz dorada."
+2. `images/history.webp`
+   - Prompt: "Retrato romántico de una pareja caminando junto a un jardín de castillo, estilo moderno, colores cremosos y textura suave."
+3. `images/dresscode-moodboard.webp`
+   - Prompt: "Moodboard de boda elegante inspirado en Met Gala, tonos beige, dorados y negros, detalles de moda sofisticada y texturas de fiesta."
+4. `images/gallery-1.webp`
+   - Prompt: "Foto de celebración de boda con invitados, ambiente nocturno, luces cálidas y un estilo íntimo y festivo."
 
 ## Siguiente paso
 
