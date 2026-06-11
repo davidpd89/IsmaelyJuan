@@ -28,6 +28,7 @@ body {
   background: var(--bg);
   color: var(--text);
   position: relative;
+  line-height: 1.7;
 }
 
 body::before {
@@ -221,9 +222,31 @@ li {
 .gallery-card img,
 .story-photo img {
   width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Aspect ratios for consistent layout */
+.hero-photo,
+.story-photo {
+  aspect-ratio: 4 / 5;
+  min-height: auto;
+}
+
+.hero-photo img,
+.story-photo img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  height: auto;
 }
 
 .hero-visual {
@@ -345,9 +368,14 @@ li {
 }
 
 .link {
-  color: var(--gold);
+  color: var(--accent-dark);
   text-decoration: none;
   font-weight: 700;
+}
+
+/* Keep moodboard links visible on dark background */
+.dresscode-moodboard .link {
+  color: #fff;
 }
 
 .footer {
