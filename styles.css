@@ -1,6 +1,6 @@
 
 :root {
-  --bg: #120f0d;
+  --bg: #1F3B2D;
   --surface: #f7efe5;
   --surface-dark: #1b1714;
   --text: #f7efe5;
@@ -9,7 +9,9 @@
   --accent: #c49a5a;
   --accent-dark: #8b5e34;
   --wine: #6f1d2d;
-  --green: #18372f;
+  --green: #1F3B2D;
+  --green-dark: #14281F;
+  --green-soft: #213D2F;
   --black: #090807;
   --gold: #c49a5a;
   --border: rgba(196, 154, 90, 0.22);
@@ -28,7 +30,10 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(196, 154, 90, 0.10), transparent 28%),
+    radial-gradient(circle at 80% 8%, rgba(111, 29, 45, 0.14), transparent 30%),
+    linear-gradient(160deg, #1F3B2D 0%, #213D2F 48%, #14281F 100%);
   color: var(--text);
   position: relative;
   line-height: 1.7;
@@ -66,9 +71,9 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(196, 154, 90, 0.16), transparent 26%),
-    radial-gradient(circle at 80% 10%, rgba(111, 29, 45, 0.22), transparent 28%),
-    radial-gradient(circle at 50% 100%, rgba(24, 55, 47, 0.24), transparent 30%);
+    radial-gradient(circle at top left, rgba(196, 154, 90, 0.12), transparent 26%),
+    radial-gradient(circle at 80% 10%, rgba(111, 29, 45, 0.12), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(31, 59, 45, 0.22), transparent 30%);
   pointer-events: none;
   z-index: -1;
 }
@@ -87,7 +92,7 @@ main {
   place-items: center;
   padding: 5rem 1.5rem 5rem;
   background:
-    linear-gradient(90deg, rgba(18, 15, 13, 0.88), rgba(18, 15, 13, 0.62)),
+    linear-gradient(90deg, rgba(20, 40, 31, 0.88), rgba(31, 59, 45, 0.60)),
     url("assets/img/backgrounds/bg-gala-dark.png") center / cover no-repeat;
 }
 
@@ -378,7 +383,7 @@ li {
 
 .dresscode-section {
   background:
-    linear-gradient(90deg, rgba(18, 15, 13, 0.82), rgba(111, 29, 45, 0.58)),
+    linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(33, 61, 47, 0.58)),
     url("assets/img/backgrounds/bg-dresscode-fabric.png") center / cover no-repeat;
 }
 
@@ -431,7 +436,7 @@ li {
 /* Venue / Castillo section */
 .venue-section {
   background:
-    linear-gradient(90deg, rgba(18, 15, 13, 0.82), rgba(24, 55, 47, 0.72)),
+    linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(31, 59, 45, 0.72)),
     url("assets/img/backgrounds/bg-castillo.png") center / cover no-repeat;
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -540,7 +545,7 @@ li {
 }
 
 .inspiration-section {
-  background: var(--surface-dark);
+  background: linear-gradient(180deg, rgba(20, 40, 31, 0.92), rgba(31, 59, 45, 0.92));
   border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -563,7 +568,7 @@ li {
 }
 
 .music-section {
-  background: linear-gradient(180deg, rgba(27,23,20,0.96), rgba(18,15,13,0.96));
+  background: linear-gradient(180deg, rgba(20, 40, 31, 0.96), rgba(31, 59, 45, 0.96));
   border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -621,7 +626,7 @@ li {
 /* Timeline section styles */
 .timeline-section {
   background:
-    linear-gradient(90deg, rgba(18, 15, 13, 0.86), rgba(18, 15, 13, 0.66)),
+    linear-gradient(90deg, rgba(20, 40, 31, 0.86), rgba(31, 59, 45, 0.66)),
     url("assets/img/backgrounds/bg-night-water.png") center / cover no-repeat;
   border-radius: 22px;
   box-shadow: var(--shadow);
