@@ -335,7 +335,7 @@ li {
 
 .hero-photo img,
 .story-photo img {
-  object-position: center center;
+  object-position: left center;
 }
 
 .gallery-card:nth-child(2) img {
@@ -396,25 +396,27 @@ li {
 .dresscode-editorial {
   width: 100%;
   display: grid;
-  gap: 0.7rem;
+  gap: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
+  text-align: center;
 }
 
 .dresscode-number {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4rem, 8vw, 7rem);
-  color: rgba(196, 154, 90, 0.55);
-  line-height: 0.85;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  color: rgba(196, 154, 90, 0.65);
+  line-height: 0.9;
   margin: 0;
+  font-weight: 700;
 }
 
 .dresscode-editorial p {
   margin: 0;
   color: var(--surface);
-  border-top: 1px solid rgba(196, 154, 90, 0.22);
-  padding-top: 0.55rem;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .gallery-grid {
@@ -714,16 +716,18 @@ li {
 
 .contact-card,
 .faq-card {
-  background: #fffaf4;
-  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(255, 250, 244, 0.95), rgba(247, 239, 229, 0.88));
+  border: 1px solid rgba(196, 154, 90, 0.35);
   border-radius: 24px;
   padding: 1.75rem;
+  box-shadow: 0 4px 16px rgba(36, 27, 21, 0.06);
 }
 
 .contact-name {
   margin: 0 0 1rem;
   font-size: 1.15rem;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
 .whatsapp-button {
