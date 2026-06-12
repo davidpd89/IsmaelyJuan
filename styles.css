@@ -775,7 +775,10 @@ li {
   .card-grid,
   .gallery-grid,
   .contact-cards,
-  .faq-grid {
+  .faq-grid,
+  .venue-grid,
+  .music-grid,
+  .inspiration-strip {
     grid-template-columns: 1fr;
   }
 
@@ -864,5 +867,11 @@ li {
 
   .timeline-item h3 {
     font-size: 1.25rem;
+  }
+
+  .music-card img,
+  .inspiration-strip img {
+    max-height: 420px;
+    object-fit: cover;
   }
 }
