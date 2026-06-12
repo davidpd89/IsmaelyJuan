@@ -15,6 +15,8 @@
   --black: #090807;
   --gold: #c49a5a;
   --border: rgba(196, 154, 90, 0.22);
+  --font-display: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
+  --font-body: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
 }
 
@@ -29,11 +31,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(196, 154, 90, 0.10), transparent 28%),
-    radial-gradient(circle at 80% 8%, rgba(111, 29, 45, 0.14), transparent 30%),
-    linear-gradient(160deg, #1F3B2D 0%, #213D2F 48%, #14281F 100%);
+  font-family: var(--font-body);
+  background: linear-gradient(160deg, #1F3B2D 0%, #214035 45%, #101F17 100%);
   color: var(--text);
   position: relative;
   line-height: 1.7;
@@ -43,18 +42,18 @@ body {
 
 /* Editorial headings */
 h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   color: var(--surface);
 }
 
 h1 {
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .eyebrow {
@@ -91,9 +90,7 @@ main {
   display: grid;
   place-items: center;
   padding: 5rem 1.5rem 5rem;
-  background:
-    linear-gradient(90deg, rgba(20, 40, 31, 0.88), rgba(31, 59, 45, 0.60)),
-    url("assets/img/backgrounds/bg-gala-dark.png") center / cover no-repeat;
+  background: linear-gradient(160deg, rgba(20, 40, 31, 0.92), rgba(31, 59, 45, 0.72));
 }
 
 .hero-inner {
@@ -230,6 +227,7 @@ main {
 p,
 li {
   color: var(--text);
+  letter-spacing: 0.01em;
 }
 
 ul {
@@ -285,9 +283,7 @@ li {
 
 /* Make history section lighter like an invitation paper */
 .history-section {
-  background:
-    linear-gradient(90deg, rgba(247, 239, 229, 0.92), rgba(247, 239, 229, 0.82)),
-    url("assets/img/backgrounds/bg-paper-story.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(247, 239, 229, 0.92), rgba(247, 239, 229, 0.82));
   color: var(--text-dark);
 }
 
@@ -382,9 +378,7 @@ li {
 }
 
 .dresscode-section {
-  background:
-    linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(33, 61, 47, 0.58)),
-    url("assets/img/backgrounds/bg-dresscode-fabric.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(33, 61, 47, 0.58));
 }
 
 .dresscode-copy {
@@ -417,7 +411,7 @@ li {
 }
 
 .dresscode-quote {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   line-height: 1.05;
   color: var(--gold);
@@ -435,9 +429,7 @@ li {
 
 /* Venue / Castillo section */
 .venue-section {
-  background:
-    linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(31, 59, 45, 0.72)),
-    url("assets/img/backgrounds/bg-castillo.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(20, 40, 31, 0.82), rgba(31, 59, 45, 0.72));
   border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
@@ -533,7 +525,7 @@ li {
 }
 
 .venue-card strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 4.8rem);
   color: var(--gold);
   letter-spacing: 0.08em;
@@ -625,9 +617,7 @@ li {
 
 /* Timeline section styles */
 .timeline-section {
-  background:
-    linear-gradient(90deg, rgba(20, 40, 31, 0.86), rgba(31, 59, 45, 0.66)),
-    url("assets/img/backgrounds/bg-night-water.png") center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(20, 40, 31, 0.86), rgba(31, 59, 45, 0.66));
   border-radius: 22px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
