@@ -245,6 +245,17 @@ li {
   background: linear-gradient(180deg, rgba(31,26,24,0.95), rgba(27,23,20,0.9));
 }
 
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-link:hover h3 {
+  color: var(--gold);
+}
+
 .history-section,
 .dresscode-section,
 .contact-section,
@@ -335,7 +346,7 @@ li {
 
 .hero-photo img,
 .story-photo img {
-  object-position: left center;
+  object-position: center center;
 }
 
 .gallery-card:nth-child(2) img {
@@ -395,7 +406,7 @@ li {
 
 .dresscode-editorial {
   width: 100%;
-  display: grid;
+  display: none;
   gap: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -746,6 +757,12 @@ li {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.faq-card,
+.faq-card h3,
+.faq-card p {
+  color: var(--surface);
+}
+
 .faq-card h3 {
   margin-top: 0;
 }
@@ -754,6 +771,37 @@ li {
   color: var(--gold);
   text-decoration: none;
   font-weight: 700;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.text-link:hover {
+  color: var(--gold);
+}
+
+.hero-badge-link {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(196, 154, 90, 0.12);
+  border: 1px solid rgba(196, 154, 90, 0.35);
+  border-radius: 6px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.hero-badge-link:hover {
+  background: rgba(196, 154, 90, 0.22);
+  border-color: rgba(196, 154, 90, 0.55);
 }
 
 .history-section .link {
