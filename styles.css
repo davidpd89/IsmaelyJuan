@@ -122,9 +122,19 @@ main {
 }
 
 .button-secondary {
-  background: transparent;
-  color: var(--surface);
+  background: rgba(196, 154, 90, 0.08);
+  color: var(--gold);
   border: 1px solid rgba(196,154,90,0.45);
+}
+
+.history-section .button-secondary,
+.faq-section .button-secondary,
+.contact-section .button-secondary,
+.note-section .button-secondary,
+.card.card-quiet .button-secondary {
+  color: var(--accent-dark);
+  border-color: rgba(139, 94, 52, 0.45);
+  background: rgba(139, 94, 52, 0.08);
 }
 
 .hero-copy {
@@ -363,10 +373,7 @@ li {
 }
 
 .dresscode-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1.25fr 0.75fr;
-  align-items: start;
+  display: block;
 }
 
 .dresscode-section {
@@ -380,54 +387,16 @@ li {
   gap: 1rem;
 }
 
-.dresscode-moodboard {
-  min-height: 320px;
-  border-radius: 18px;
-  padding: 2rem;
-  background:
-    linear-gradient(135deg, rgba(9, 8, 7, 0.22), rgba(111, 29, 45, 0.5)),
-    url("assets/img/backgrounds/bg-dresscode-fabric.png") center / cover no-repeat;
-  border: 1px solid rgba(196, 154, 90, 0.32);
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-  color: var(--surface);
+.dresscode-copy-wide {
+  max-width: 780px;
 }
 
-.dresscode-moodboard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: radial-gradient(circle at top right, rgba(196, 154, 90, 0.14), transparent 28%);
-  pointer-events: none;
-}
-
-.dresscode-editorial {
-  width: 100%;
-  display: none;
-  gap: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  text-align: center;
-}
-
+/* Removed the old dresscode visual block to keep the layout clean */
+.dresscode-moodboard,
+.dresscode-moodboard::before,
+.dresscode-editorial,
 .dresscode-number {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.5rem, 6vw, 6rem);
-  color: rgba(196, 154, 90, 0.65);
-  line-height: 0.9;
-  margin: 0;
-  font-weight: 700;
-}
-
-.dresscode-editorial p {
-  margin: 0;
-  color: var(--surface);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.4;
+  display: none !important;
 }
 
 .gallery-grid {
@@ -454,7 +423,7 @@ li {
   color: var(--gold);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   font-size: 0.8rem;
   margin: 0;
 }
@@ -734,6 +703,12 @@ li {
   box-shadow: 0 4px 16px rgba(36, 27, 21, 0.06);
 }
 
+.contact-card,
+.contact-card p,
+.contact-card h3 {
+  color: var(--text-dark);
+}
+
 .contact-name {
   margin: 0 0 1rem;
   font-size: 1.15rem;
@@ -757,14 +732,17 @@ li {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.faq-card,
-.faq-card h3,
-.faq-card p {
-  color: var(--surface);
+.faq-card {
+  color: var(--text-dark);
 }
 
 .faq-card h3 {
   margin-top: 0;
+  color: var(--text-dark);
+}
+
+.faq-card p {
+  color: #4f453b;
 }
 
 .link {
@@ -848,9 +826,7 @@ li {
 }
 
 /* Keep moodboard links visible on dark background */
-.dresscode-moodboard .link {
-  color: #fff;
-}
+/* dresscode-moodboard is no longer rendered */
 
 .footer {
   text-align: center;
