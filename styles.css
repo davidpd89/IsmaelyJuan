@@ -328,8 +328,22 @@ li {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center center;
   display: block;
   height: auto;
+}
+
+.hero-photo img,
+.story-photo img {
+  object-position: center center;
+}
+
+.gallery-card:nth-child(2) img {
+  object-position: center top;
+}
+
+.gallery-card:nth-child(4) img {
+  object-position: center center;
 }
 
 .hero-visual {
@@ -356,42 +370,51 @@ li {
 }
 
 .dresscode-moodboard {
-  min-height: 280px;
-  border-radius: 28px;
+  min-height: 320px;
+  border-radius: 18px;
   padding: 2rem;
-  background: linear-gradient(180deg, rgba(24, 55, 47, 0.95), rgba(111, 29, 45, 0.92));
-  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(9, 8, 7, 0.22), rgba(111, 29, 45, 0.5)),
+    url("assets/img/backgrounds/bg-dresscode-fabric.png") center / cover no-repeat;
+  border: 1px solid rgba(196, 154, 90, 0.32);
   display: grid;
-  gap: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--surface);
 }
 
 .dresscode-moodboard::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 28px;
-  background: radial-gradient(circle at top right, rgba(196, 154, 90, 0.15), transparent 30%);
+  border-radius: 18px;
+  background: radial-gradient(circle at top right, rgba(196, 154, 90, 0.14), transparent 28%);
   pointer-events: none;
 }
 
-.dresscode-moodboard {
-  position: relative;
+.dresscode-editorial {
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 
-.dresscode-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+.dresscode-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: rgba(196, 154, 90, 0.55);
+  line-height: 0.85;
+  margin: 0;
 }
 
-.dresscode-chips span {
-  display: inline-flex;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.95rem;
+.dresscode-editorial p {
+  margin: 0;
+  color: var(--surface);
+  border-top: 1px solid rgba(196, 154, 90, 0.22);
+  padding-top: 0.55rem;
+  font-size: 0.82rem;
 }
 
 .gallery-grid {
@@ -461,6 +484,34 @@ li {
   font-size: 0.85rem;
 }
 
+.venue-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.venue-links a {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.venue-photo {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(196, 154, 90, 0.42);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
+}
+
+.venue-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
 .venue-visual {
   min-height: 360px;
   border-radius: 18px;
@@ -506,13 +557,82 @@ li {
   font-size: 0.8rem;
 }
 
+.inspiration-section {
+  background: var(--surface-dark);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+}
+
+.inspiration-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.inspiration-strip img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(196, 154, 90, 0.28);
+}
+
+.music-section {
+  background: linear-gradient(180deg, rgba(27,23,20,0.96), rgba(18,15,13,0.96));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.music-card {
+  background: rgba(247, 239, 229, 0.06);
+  border: 1px solid rgba(196, 154, 90, 0.28);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.music-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.music-card h3 {
+  margin: 1rem;
+  color: var(--gold);
+}
+
 @media (max-width: 960px) {
-  .venue-grid {
+  .venue-grid,
+  .inspiration-strip,
+  .music-grid,
+  .timeline-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  .venue-visual {
+  .venue-visual,
+  .venue-photo {
     min-height: 280px;
+  }
+
+  .inspiration-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .music-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -627,9 +747,13 @@ li {
 }
 
 .link {
-  color: var(--accent-dark);
+  color: var(--gold);
   text-decoration: none;
   font-weight: 700;
+}
+
+.history-section .link {
+  color: var(--accent-dark);
 }
 
 /* Keep moodboard links visible on dark background */
@@ -655,12 +779,21 @@ li {
     grid-template-columns: 1fr;
   }
 
+  .gallery-grid > .gallery-card:nth-child(1) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .timeline-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-inner {
     gap: 2rem;
+  }
+
+  .venue-photo img {
+    min-height: 260px;
   }
 }
 
@@ -678,6 +811,28 @@ li {
     padding: 1.5rem 0 3rem;
   }
 
+  .section,
+  .history-section,
+  .venue-section,
+  .dresscode-section,
+  .timeline-section,
+  .contact-section,
+  .note-section,
+  .faq-section,
+  .gallery {
+    border-radius: 18px;
+  }
+
+  .history-section,
+  .venue-section,
+  .dresscode-section,
+  .timeline-section,
+  .contact-section,
+  .note-section,
+  .faq-section {
+    padding: 1.4rem;
+  }
+
   .section-header h2 {
     font-size: 2rem;
   }
@@ -690,8 +845,21 @@ li {
     grid-template-columns: 1fr;
   }
 
+  .hero-actions .button,
+  .whatsapp-button {
+    width: 100%;
+  }
+
+  .hero-badges span {
+    font-size: 0.66rem;
+  }
+
   .hero-copy h1 {
     font-size: 2.2rem;
+  }
+
+  .dresscode-quote {
+    font-size: 1.55rem;
   }
 
   .timeline-item h3 {
