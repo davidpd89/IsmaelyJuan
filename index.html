@@ -30,22 +30,53 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="music-player" aria-label="Reproductor de música">
+    <audio id="wedding-audio" src="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" preload="none" loop></audio>
+    <button class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
+      <span class="music-icon" aria-hidden="true">♪</span>
+      <span class="music-text">Música</span>
+    </button>
+  </div>
+
   <main>
+    <section class="countdown-section" aria-label="Cuenta atrás para la boda">
+      <div class="countdown-inner">
+        <p class="countdown-kicker">Cuenta atrás</p>
+        <p class="countdown-title">Nos vemos en el castillo en</p>
+
+        <div class="countdown-grid" data-countdown="2026-09-12T18:00:00+02:00">
+          <div class="countdown-item">
+            <span class="countdown-number" data-days>000</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" data-hours>00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" data-minutes>00</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" data-seconds>00</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+
+        <p class="countdown-finished" hidden>Hoy celebramos. Gracias por estar aquí.</p>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="hero-inner container">
         <div class="hero-copy">
+          <img src="assets/img/favicon.png" alt="" class="hero-monogram" width="52" height="52" decoding="async" aria-hidden="true">
           <p class="eyebrow">Boda de Ismael &amp; Juangui</p>
           <h1>Ismael &amp; Juangui</h1>
           <p class="hero-text">12 de septiembre de 2026 · <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Castillo de Guadamur, Toledo</a></p>
           <p class="hero-note">El océano nos separaba, la Gran Vía nos unió y Madrid hizo el resto.</p>
-          <div class="hero-badges">
-            <span>Met Gala inspired</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="hero-badge-link">Castillo de Guadamur</a>
-            <span>12 · 09 · 26</span>
-          </div>
           <div class="hero-actions">
-            <a href="#detalles" class="button">Ver detalles</a>
-            <a href="#rsvp" class="button button-secondary">Confirmar asistencia</a>
+            <a href="#rsvp" class="button">Confirmar asistencia</a>
           </div>
         </div>
 
@@ -241,5 +272,101 @@
   <footer class="footer">
     <p><a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Ismael &amp; Juangui · 12 de septiembre de 2026 · Castillo de Guadamur</a></p>
   </footer>
+
+  <script>
+    (function () {
+      const countdown = document.querySelector("[data-countdown]");
+      if (!countdown) return;
+
+      const target = new Date(countdown.getAttribute("data-countdown")).getTime();
+      const daysEl = countdown.querySelector("[data-days]");
+      const hoursEl = countdown.querySelector("[data-hours]");
+      const minutesEl = countdown.querySelector("[data-minutes]");
+      const secondsEl = countdown.querySelector("[data-seconds]");
+      const finishedEl = document.querySelector(".countdown-finished");
+
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      function updateCountdown() {
+        const distance = target - Date.now();
+
+        if (distance <= 0) {
+          daysEl.textContent = "000";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+
+          if (finishedEl) {
+            finishedEl.hidden = false;
+          }
+
+          clearInterval(timer);
+          return;
+        }
+
+        const totalSeconds = Math.floor(distance / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        daysEl.textContent = String(days).padStart(3, "0");
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      const timer = setInterval(updateCountdown, 1000);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const audio = document.getElementById("wedding-audio");
+      const button = document.querySelector(".music-toggle");
+
+      if (!audio || !button) return;
+
+      const text = button.querySelector(".music-text");
+
+      function setPlayingState(isPlaying) {
+        button.classList.toggle("is-playing", isPlaying);
+        button.setAttribute("aria-pressed", String(isPlaying));
+        button.setAttribute("aria-label", isPlaying ? "Pausar música" : "Reproducir música");
+
+        if (text) {
+          text.textContent = isPlaying ? "Pausar" : "Música";
+        }
+      }
+
+      button.addEventListener("click", async function () {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            setPlayingState(true);
+          } catch (error) {
+            console.warn("No se pudo reproducir el audio:", error);
+            setPlayingState(false);
+          }
+        } else {
+          audio.pause();
+          setPlayingState(false);
+        }
+      });
+
+      audio.addEventListener("ended", function () {
+        setPlayingState(false);
+      });
+
+      audio.addEventListener("pause", function () {
+        if (audio.currentTime > 0 && !audio.ended) {
+          setPlayingState(false);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
