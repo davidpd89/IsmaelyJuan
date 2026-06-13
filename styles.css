@@ -1,3 +1,106 @@
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-HeavyItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Romie";
+  src: url("assets/fonts/romie/RomieTrial-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --bg: #1F3B2D;
@@ -15,8 +118,8 @@
   --black: #090807;
   --gold: #c49a5a;
   --border: rgba(196, 154, 90, 0.22);
-  --font-display: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
-  --font-body: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Romie", Georgia, "Times New Roman", serif;
+  --font-body: "Romie", Georgia, "Times New Roman", serif;
   --shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
 }
 
@@ -216,6 +319,13 @@ main {
   letter-spacing: -0.04em;
 }
 
+.title-md {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
 p,
 li {
   color: var(--text);
@@ -281,7 +391,8 @@ li {
 
 .history-section p,
 .history-section .eyebrow,
-.history-section h2 {
+.history-section h2,
+.history-section .title-md {
   color: var(--text-dark);
 }
 
@@ -302,6 +413,67 @@ li {
   gap: 2rem;
   grid-template-columns: 1.35fr 0.85fr;
   align-items: center;
+}
+
+.story-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(36, 27, 21, 0.12);
+  background: #fff;
+}
+
+.story-carousel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: story-fade 10s infinite;
+}
+
+.story-carousel img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+@keyframes story-fade {
+  0%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.program-block + .program-block {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(196, 154, 90, 0.2);
+}
+
+.program-block .title-md {
+  color: var(--surface);
+}
+
+.program-photo {
+  margin-top: 1.5rem;
+  max-width: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(196, 154, 90, 0.28);
+}
+
+.program-photo img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.timeline-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .photo-card {
@@ -404,8 +576,8 @@ li {
 
 .dresscode-quote {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  line-height: 1.05;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.2;
   color: var(--gold);
   margin: 0 0 1rem;
 }
@@ -574,9 +746,74 @@ li {
 
 .music-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
+  max-height: 220px;
   object-fit: cover;
   display: block;
+}
+
+.music-spotify-copy {
+  margin: 1.75rem 0 1rem;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.music-spotify-button {
+  display: inline-flex;
+}
+
+.dresscode-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 520px;
+  margin: 0.5rem 0 1rem;
+}
+
+.dresscode-photos img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 154, 90, 0.28);
+  display: block;
+}
+
+.gallery-single {
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 36px rgba(36, 27, 21, 0.08);
+}
+
+.gallery-single img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.gallery-upload-button {
+  margin-top: 1.5rem;
+  display: inline-flex;
+}
+
+.rsvp-note {
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.bank-details {
+  margin: 1rem 0 0;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+.note-section .bank-details {
+  color: var(--surface);
 }
 
 .music-card h3 {
@@ -644,7 +881,7 @@ li {
 .timeline-item h3 {
   margin: 0 0 0.5rem;
   color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
 }
 
 /* Hashtag style for sharing */
@@ -705,12 +942,6 @@ li {
 
 .whatsapp-button {
   width: 100%;
-}
-
-.bank-details {
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font-style: italic;
 }
 
 .faq-grid {
@@ -841,8 +1072,17 @@ li {
     grid-row: auto;
   }
 
-  .timeline-grid {
+  .timeline-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .dresscode-photos {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  .story-carousel {
+    max-width: 300px;
   }
 
   .hero-inner {
