@@ -97,6 +97,9 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress-bar"></span>
+  </div>
   <div class="music-player" aria-label="Reproductor de música">
     <audio id="wedding-audio" src="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" preload="none" loop></audio>
     <button class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
@@ -104,6 +107,16 @@
       <span class="music-text">Música</span>
     </button>
   </div>
+
+  <nav class="bottom-nav" aria-label="Navegación rápida">
+    <a href="#inicio">Inicio</a>
+    <a href="#detalles">Historia</a>
+    <a href="#castillo">Castillo</a>
+    <a href="#programa">Programa</a>
+    <a href="#rsvp">Confirmar</a>
+  </nav>
+
+  <button class="back-to-top" type="button" aria-label="Volver arriba">↑</button>
 
   <main>
     <section class="countdown-section" aria-label="Cuenta atrás para la boda">
@@ -134,7 +147,7 @@
       </div>
     </section>
 
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="hero-inner container">
         <div class="hero-copy">
           <img src="assets/img/favicon.png" alt="" class="hero-monogram" width="52" height="52" decoding="async" aria-hidden="true">
@@ -145,6 +158,7 @@
           <div class="hero-actions">
             <a href="#rsvp" class="button">Confirmar asistencia</a>
             <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Guardar fecha</a>
+            <button class="button button-secondary info-modal-trigger" type="button" data-modal-open>Info rápida</button>
           </div>
         </div>
 
@@ -153,6 +167,27 @@
             <img src="assets/foto%20principal.jpg" alt="Foto principal de Ismaely y Juangui" fetchpriority="high" decoding="async">
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="quick-info-section" aria-label="Datos clave de la boda">
+      <div class="quick-info-inner">
+        <a href="#" class="quick-info-item js-calendar-google" target="_blank" rel="noopener noreferrer">
+          <span>Fecha</span>
+          <strong>12 Sep 2026</strong>
+        </a>
+        <a href="#" class="quick-info-item js-calendar-google" target="_blank" rel="noopener noreferrer">
+          <span>Hora</span>
+          <strong>18:00 h</strong>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" class="quick-info-item" target="_blank" rel="noopener noreferrer">
+          <span>Lugar</span>
+          <strong>Castillo de Guadamur</strong>
+        </a>
+        <a href="#rsvp" class="quick-info-item">
+          <span>RSVP</span>
+          <strong>Confirmar</strong>
+        </a>
       </div>
     </section>
 
@@ -178,6 +213,7 @@
           <img src="assets/img/history/nuestra-historia-6.jpg" alt="Ismael y Juangui brindando" loading="lazy" decoding="async">
         </div>
       </div>
+      <a href="#castillo" class="section-next">Siguiente: el castillo</a>
     </section>
 
     <section class="venue-section section container" id="castillo">
@@ -193,6 +229,7 @@
           <div class="planning-actions" aria-label="Accesos rápidos para planificar la boda">
             <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Google Calendar</a>
             <a href="#" class="button button-secondary js-calendar-ics" download="ismael-juangui-boda.ics">Calendario .ics</a>
+            <button class="button button-secondary copy-address-button" type="button" data-copy-value="Castillo de Guadamur, Guadamur, Toledo" data-copy-label="Copiar dirección" data-copy-success="Dirección copiada">Copiar dirección</button>
           </div>
         </div>
 
@@ -205,9 +242,30 @@
           </div>
         </div>
       </div>
+      <div class="travel-brief" aria-label="Información práctica">
+        <article>
+          <span>Alojamiento recomendado</span>
+          <p>Guadamur es lo más cómodo: casas en Airbnb y Booking a distancia andando del castillo.</p>
+        </article>
+        <article>
+          <span>Transporte</span>
+          <p>Si venís desde Madrid o Toledo, mejor organizar coche o conductor con antelación.</p>
+        </article>
+        <article>
+          <span>Preboda</span>
+          <p>El viernes 11 habrá encuentro en Cobisa, con horario aproximado de 7 a 12.</p>
+        </article>
+      </div>
+      <details class="venue-map-panel">
+        <summary>Ver mapa aquí</summary>
+        <div class="map-frame">
+          <iframe title="Mapa del Castillo de Guadamur" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-src="https://www.google.com/maps?q=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo&output=embed"></iframe>
+        </div>
+      </details>
+      <a href="#programa" class="section-next section-next-on-green">Siguiente: programa</a>
     </section>
 
-    <section class="timeline-section section container">
+    <section class="timeline-section section container" id="programa">
       <div class="program-block">
         <img src="assets/img/icons/icon-ceremonia.png" alt="" class="section-icon section-icon--on-surface" width="48" height="48" decoding="async" aria-hidden="true">
         <h2 class="title-md">Ceremonia</h2>
@@ -244,6 +302,7 @@
           <img src="assets/img/program/banquete-fiesta.jpg" alt="Ambiente de banquete y fiesta en el castillo" loading="lazy" decoding="async">
         </div>
       </div>
+      <a href="#dresscode" class="section-next">Siguiente: dress code</a>
     </section>
 
     <section class="music-section section container">
@@ -267,7 +326,7 @@
       <a class="button button-secondary music-spotify-button" href="https://open.spotify.com/playlist/44vGFqOKHFAlAov1g9ERmD?si=nmm9Q8jnRq6OP6Iw9d9XAw&amp;pi=8QuQ3ughQ8mPA" target="_blank" rel="noopener noreferrer">Añadir canciones a la playlist</a>
     </section>
 
-    <section class="section container dresscode-section">
+    <section class="section container dresscode-section" id="dresscode">
       <div class="section-header">
         <p class="eyebrow">Dress code</p>
         <img src="assets/img/icons/icon-dresscode.png" alt="" class="section-icon section-icon--on-surface" width="56" height="56" decoding="async" aria-hidden="true">
@@ -293,6 +352,13 @@
         <img src="assets/img/gallery/galeria.jpg" alt="Momento especial de Ismael y Juangui" loading="lazy" decoding="async">
       </div>
       <a class="button button-secondary gallery-upload-button" href="#" id="subir-fotos">Subir vuestras fotos al álbum (enlace próximamente)</a>
+      <div class="guestbook-preview">
+        <p>También prepararemos un espacio para mensajes y recuerdos cuando tengamos el enlace definitivo.</p>
+        <div class="guestbook-actions">
+          <a class="button button-secondary" href="#" aria-disabled="true">Álbum compartido</a>
+          <a class="button button-secondary" href="#" aria-disabled="true">Dejadnos un mensaje</a>
+        </div>
+      </div>
     </section>
 
     <section id="rsvp" class="section container contact-section">
@@ -304,6 +370,7 @@
       <p>Por favor, confirma tu asistencia para ayudarnos con la organización de mesas y la celebración.</p>
       <div class="contact-actions">
         <a href="#" class="button button-secondary questionnaire-button" aria-disabled="true">Rellena este cuestionario</a>
+        <a href="#" class="button button-secondary js-vcard" download="ismael-juangui-contactos.vcf">Guardar contactos</a>
         <div class="whatsapp-actions">
           <a href="https://wa.me/34666202546?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Ismael%20y%20Juangui." class="button whatsapp-button">Confirmar con Juangui</a>
           <a href="https://wa.me/34667946999?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Ismael%20y%20Juangui." class="button whatsapp-button">Confirmar con Ismael</a>
@@ -384,12 +451,42 @@
           </div>
         </details>
       </div>
+      <p class="last-updated">Última actualización: junio 2026</p>
     </section>
   </main>
 
   <footer class="footer">
     <p><a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Ismael &amp; Juangui · 12 de septiembre de 2026 · Castillo de Guadamur</a></p>
+    <button class="footer-share" type="button" data-share-button>Compartir invitación</button>
   </footer>
+
+  <div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title" hidden>
+    <div class="info-modal-panel" role="document">
+      <button class="info-modal-close" type="button" aria-label="Cerrar" data-modal-close>×</button>
+      <p class="eyebrow">Info rápida</p>
+      <h2 id="info-modal-title">Lo esencial de la boda</h2>
+      <dl class="info-modal-list">
+        <div>
+          <dt>Fecha y hora</dt>
+          <dd>12 de septiembre de 2026 · 18:00 h</dd>
+        </div>
+        <div>
+          <dt>Lugar</dt>
+          <dd>Castillo de Guadamur, Toledo</dd>
+        </div>
+        <div>
+          <dt>Dress code</dt>
+          <dd>Met Gala en un castillo: elegante, creativo y con personalidad.</dd>
+        </div>
+      </dl>
+      <div class="info-modal-actions">
+        <a href="#rsvp" class="button" data-modal-close>Confirmar</a>
+        <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Guardar fecha</a>
+      </div>
+    </div>
+  </div>
+
+  <canvas class="confetti-canvas" aria-hidden="true"></canvas>
 
   <script>
     (function () {
@@ -400,6 +497,70 @@
         startUtc: "20260912T160000Z",
         endUtc: "20260913T030000Z"
       };
+      const pageTitle = "Ismael & Juangui | Boda 12 Sep 2026";
+      const pageUrl = "https://ismaelyjuangui.blog/";
+
+      function launchConfetti() {
+        const canvas = document.querySelector(".confetti-canvas");
+        if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const context = canvas.getContext("2d");
+        const particles = Array.from({ length: 46 }, function () {
+          return {
+            x: window.innerWidth / 2,
+            y: window.innerHeight * 0.58,
+            size: Math.random() * 5 + 3,
+            speedX: (Math.random() - 0.5) * 8,
+            speedY: Math.random() * -8 - 3,
+            rotation: Math.random() * Math.PI,
+            color: Math.random() > 0.45 ? "#F1F4EF" : "#1F3B2D",
+            life: 70 + Math.random() * 20
+          };
+        });
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function frame() {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          particles.forEach(function (particle) {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+            particle.speedY += 0.22;
+            particle.rotation += 0.08;
+            particle.life -= 1;
+
+            context.save();
+            context.translate(particle.x, particle.y);
+            context.rotate(particle.rotation);
+            context.fillStyle = particle.color;
+            context.globalAlpha = Math.max(particle.life / 90, 0);
+            context.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size * 0.55);
+            context.restore();
+          });
+
+          if (particles.some(function (particle) { return particle.life > 0; })) {
+            requestAnimationFrame(frame);
+          } else {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        }
+
+        frame();
+      }
+
+      function setCopiedState(button, value) {
+        const label = button.dataset.copyLabel || button.textContent;
+        const success = button.dataset.copySuccess || "Copiado";
+
+        button.textContent = value || success;
+        button.classList.add("is-copied");
+        window.setTimeout(function () {
+          button.textContent = label;
+          button.classList.remove("is-copied");
+        }, value ? 2600 : 1800);
+      }
 
       const googleParams = new URLSearchParams({
         action: "TEMPLATE",
@@ -434,26 +595,159 @@
         link.href = icsHref;
       });
 
-      document.querySelectorAll(".copy-bank-button").forEach(function (button) {
+      document.querySelectorAll(".copy-bank-button, .copy-address-button").forEach(function (button) {
         button.addEventListener("click", async function () {
           const value = button.dataset.copyValue;
-          const label = button.dataset.copyLabel || button.textContent;
-          const success = button.dataset.copySuccess || "Copiado";
 
           try {
             await navigator.clipboard.writeText(value);
-            button.textContent = success;
-            window.setTimeout(function () {
-              button.textContent = label;
-            }, 1800);
+            setCopiedState(button);
+            launchConfetti();
           } catch (error) {
-            button.textContent = value;
-            window.setTimeout(function () {
-              button.textContent = label;
-            }, 2600);
+            setCopiedState(button, value);
           }
         });
       });
+
+      document.querySelectorAll(".whatsapp-button").forEach(function (link) {
+        link.addEventListener("click", launchConfetti);
+      });
+
+      const vcard = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "FN:Ismael y Juangui",
+        "N:Ismael y Juangui;;;;",
+        "TEL;TYPE=CELL:+34667946999",
+        "TEL;TYPE=CELL:+34666202546",
+        "URL:https://ismaelyjuangui.blog/",
+        "END:VCARD"
+      ].join("\r\n");
+
+      document.querySelectorAll(".js-vcard").forEach(function (link) {
+        link.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcard);
+      });
+
+      document.querySelectorAll("[data-share-button]").forEach(function (button) {
+        button.addEventListener("click", async function () {
+          if (navigator.share) {
+            try {
+              await navigator.share({ title: pageTitle, url: pageUrl });
+              return;
+            } catch (error) {
+              if (error.name === "AbortError") return;
+            }
+          }
+
+          try {
+            await navigator.clipboard.writeText(pageUrl);
+            button.textContent = "Enlace copiado";
+            button.classList.add("is-copied");
+            window.setTimeout(function () {
+              button.textContent = "Compartir invitación";
+              button.classList.remove("is-copied");
+            }, 1800);
+          } catch (error) {
+            button.textContent = pageUrl;
+          }
+        });
+      });
+
+      const modal = document.querySelector(".info-modal");
+      const modalOpeners = document.querySelectorAll("[data-modal-open]");
+      const modalClosers = document.querySelectorAll("[data-modal-close]");
+      let lastFocusedElement = null;
+
+      function openModal() {
+        if (!modal) return;
+        lastFocusedElement = document.activeElement;
+        modal.hidden = false;
+        const closeButton = modal.querySelector("[data-modal-close]");
+        if (closeButton) closeButton.focus();
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.hidden = true;
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      modalOpeners.forEach(function (button) {
+        button.addEventListener("click", openModal);
+      });
+
+      modalClosers.forEach(function (button) {
+        button.addEventListener("click", closeModal);
+      });
+
+      if (modal) {
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) closeModal();
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeModal();
+      });
+
+      const progressBar = document.querySelector(".scroll-progress-bar");
+      const backToTop = document.querySelector(".back-to-top");
+      const navLinks = Array.from(document.querySelectorAll(".bottom-nav a"));
+      const navTargets = navLinks
+        .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+        .filter(Boolean);
+
+      function updateScrollUi() {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+
+        if (progressBar) {
+          progressBar.style.width = Math.min(progress, 100) + "%";
+        }
+
+        if (backToTop) {
+          backToTop.classList.toggle("is-visible", window.scrollY > 600);
+        }
+
+        let activeId = navTargets[0] ? navTargets[0].id : "";
+        navTargets.forEach(function (section) {
+          if (section.getBoundingClientRect().top < window.innerHeight * 0.38) {
+            activeId = section.id;
+          }
+        });
+
+        navLinks.forEach(function (link) {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + activeId);
+        });
+      }
+
+      window.addEventListener("scroll", updateScrollUi, { passive: true });
+      window.addEventListener("resize", updateScrollUi);
+      updateScrollUi();
+
+      if (backToTop) {
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      const revealTargets = document.querySelectorAll(".section-header, .hero-copy, .hero-visual, .venue-photo, .program-photo, .gallery-single, .story-carousel, .timeline-item, .faq-item");
+
+      if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealTargets.forEach(function (element) {
+          element.classList.add("reveal-on-scroll");
+          observer.observe(element);
+        });
+      }
 
       document.querySelectorAll(".faq-item").forEach(function (item) {
         item.addEventListener("toggle", function () {
@@ -464,6 +758,16 @@
               openItem.open = false;
             }
           });
+        });
+      });
+
+      document.querySelectorAll(".venue-map-panel").forEach(function (panel) {
+        panel.addEventListener("toggle", function () {
+          const iframe = panel.querySelector("iframe[data-src]");
+
+          if (panel.open && iframe && !iframe.src) {
+            iframe.src = iframe.dataset.src;
+          }
         });
       });
     })();
