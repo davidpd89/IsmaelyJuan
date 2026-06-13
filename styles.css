@@ -176,6 +176,30 @@ h2 {
   letter-spacing: -0.035em;
 }
 
+.title-sm {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 1.9vw, 1.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.section-icon {
+  display: block;
+  width: 48px;
+  height: auto;
+  margin: 0 0 0.75rem;
+  opacity: 0.92;
+}
+
+.section-icon--center {
+  margin: 1.25rem auto 0;
+}
+
+.section-icon--on-green {
+  filter: brightness(0) invert(1);
+}
+
 h3,
 .music-card h3,
 .faq-card h3,
@@ -339,7 +363,7 @@ main > section.container {
 .hero {
   display: grid;
   place-items: center;
-  padding: 3.5rem 1.5rem 5rem;
+  padding: 3.5rem 1.5rem 2.75rem;
   background: var(--green);
   color: var(--text-on-green);
 }
@@ -509,6 +533,7 @@ button,
   box-shadow: none;
   border: 0;
   border-radius: 0;
+  padding-top: 3rem;
 }
 
 .history-section,
@@ -516,6 +541,7 @@ button,
 .history-section h2,
 .history-section h3,
 .history-section .title-md,
+.history-section .title-sm,
 .history-section .eyebrow {
   color: var(--text-on-surface);
 }
@@ -556,16 +582,18 @@ button,
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: story-fade 10s infinite;
+  animation: story-fade 25s infinite;
 }
 
-.story-carousel img:nth-child(2) {
-  animation-delay: 5s;
-}
+.story-carousel img:nth-child(1) { animation-delay: 0s; }
+.story-carousel img:nth-child(2) { animation-delay: -20s; }
+.story-carousel img:nth-child(3) { animation-delay: -15s; }
+.story-carousel img:nth-child(4) { animation-delay: -10s; }
+.story-carousel img:nth-child(5) { animation-delay: -5s; }
 
 @keyframes story-fade {
-  0%, 45% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%, 16% { opacity: 1; }
+  20%, 100% { opacity: 0; }
 }
 
 /* Venue — green block */
@@ -594,7 +622,16 @@ button,
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
+}
+
+.venue-media {
+  display: grid;
+  gap: 1rem;
+}
+
+.venue-links-below {
+  margin-top: 0;
 }
 
 .venue-links {
@@ -689,7 +726,7 @@ button,
   border-radius: 0;
   box-shadow: none;
   padding: 1.25rem;
-  text-align: center;
+  text-align: left;
 }
 
 .timeline-item h3 {
@@ -739,8 +776,9 @@ button,
 
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 130px));
+  gap: 1rem;
+  max-width: 300px;
 }
 
 .music-card {
@@ -762,14 +800,16 @@ button,
 .music-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-height: 220px;
+  max-height: 110px;
   object-fit: cover;
   display: block;
 }
 
 .music-card h3 {
-  margin: 1rem;
+  margin: 0.5rem 0.65rem 0.75rem;
   color: var(--text-on-green);
+  font-size: 0.82rem;
+  line-height: 1.2;
 }
 
 .music-card:hover h3 {
