@@ -28,6 +28,73 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon.png?v=2">
   <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=2">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Boda de Ismael y Juangui",
+      "description": "Celebración de la boda de Ismael y Juangui en el Castillo de Guadamur, Toledo.",
+      "startDate": "2026-09-12T18:00:00+02:00",
+      "endDate": "2026-09-13T05:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "image": "https://ismaelyjuangui.blog/assets/foto%20principal.jpg",
+      "location": {
+        "@type": "Place",
+        "name": "Castillo de Guadamur",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guadamur",
+          "addressRegion": "Toledo",
+          "addressCountry": "ES"
+        }
+      },
+      "organizer": {
+        "@type": "Person",
+        "name": "Ismael y Juangui"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Transporte y alojamiento",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo ideal es alojarse en Guadamur, con opciones de casas en Airbnb y Booking a distancia andando del castillo; también hay hoteles cercanos en Pulgar y Layos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Habrá preboda o evento el viernes 11 de septiembre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El día antes habrá una pequeña reunión pre-boda en Cobisa, en una casa de la familia de Ismael. El horario aproximado será de 7 a 12."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde es la boda?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La celebración será en el Castillo de Guadamur, en Toledo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde indico alergias o necesidades especiales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se recogerá en el cuestionario de invitados: alergias, intolerancias, celiaquía, embarazo, menú especial o cualquier detalle importante."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <div class="music-player" aria-label="Reproductor de música">
@@ -77,6 +144,7 @@
           <p class="hero-note">El océano nos separaba, la Gran Vía nos unió y Madrid hizo el resto.</p>
           <div class="hero-actions">
             <a href="#rsvp" class="button">Confirmar asistencia</a>
+            <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Guardar fecha</a>
           </div>
         </div>
 
@@ -121,6 +189,10 @@
           <p>Una fortaleza histórica en Guadamur, Toledo, convertida por una noche en escenario de celebración. Piedra, torres, atardecer y una fiesta pensada para vivirse como una gran entrada de gala.</p>
           <div class="venue-links">
             <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer">Ver ubicación</a>
+          </div>
+          <div class="planning-actions" aria-label="Accesos rápidos para planificar la boda">
+            <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+            <a href="#" class="button button-secondary js-calendar-ics" download="ismael-juangui-boda.ics">Calendario .ics</a>
           </div>
         </div>
 
@@ -247,6 +319,7 @@
       </div>
       <p>Nuestro mejor regalo sois vosotros. Si aún así queréis tener un detalle con nosotros, aceptamos sobres con mucho cariño para seguir descubriendo el mundo juntos.</p>
       <p class="bank-details"><strong>IBAN:</strong> ES52 1583 0001 1891 1412 1178</p>
+      <button class="button button-secondary copy-bank-button" type="button" data-copy-value="ES5215830001189114121178" data-copy-label="Copiar IBAN" data-copy-success="IBAN copiado">Copiar IBAN</button>
       <div class="bank-extra" aria-label="Datos para transferencias internacionales">
         <p><strong>Código BIC/SWIFT:</strong> REVOESM2</p>
         <p><strong>Beneficiario:</strong> I Balmaseda Galan &amp; J Ruiz Bravo</p>
@@ -317,6 +390,84 @@
   <footer class="footer">
     <p><a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Ismael &amp; Juangui · 12 de septiembre de 2026 · Castillo de Guadamur</a></p>
   </footer>
+
+  <script>
+    (function () {
+      const weddingEvent = {
+        title: "Boda de Ismael y Juangui",
+        location: "Castillo de Guadamur, Guadamur, Toledo",
+        description: "Celebración de la boda de Ismael y Juangui.",
+        startUtc: "20260912T160000Z",
+        endUtc: "20260913T030000Z"
+      };
+
+      const googleParams = new URLSearchParams({
+        action: "TEMPLATE",
+        text: weddingEvent.title,
+        dates: weddingEvent.startUtc + "/" + weddingEvent.endUtc,
+        details: weddingEvent.description,
+        location: weddingEvent.location
+      });
+
+      document.querySelectorAll(".js-calendar-google").forEach(function (link) {
+        link.href = "https://calendar.google.com/calendar/render?" + googleParams.toString();
+      });
+
+      const icsLines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//ismaelyjuangui.blog//Wedding//ES",
+        "BEGIN:VEVENT",
+        "UID:ismael-juangui-20260912@ismaelyjuangui.blog",
+        "DTSTAMP:20260613T000000Z",
+        "DTSTART:" + weddingEvent.startUtc,
+        "DTEND:" + weddingEvent.endUtc,
+        "SUMMARY:" + weddingEvent.title,
+        "DESCRIPTION:" + weddingEvent.description,
+        "LOCATION:" + weddingEvent.location,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ];
+
+      const icsHref = "data:text/calendar;charset=utf-8," + encodeURIComponent(icsLines.join("\r\n"));
+      document.querySelectorAll(".js-calendar-ics").forEach(function (link) {
+        link.href = icsHref;
+      });
+
+      document.querySelectorAll(".copy-bank-button").forEach(function (button) {
+        button.addEventListener("click", async function () {
+          const value = button.dataset.copyValue;
+          const label = button.dataset.copyLabel || button.textContent;
+          const success = button.dataset.copySuccess || "Copiado";
+
+          try {
+            await navigator.clipboard.writeText(value);
+            button.textContent = success;
+            window.setTimeout(function () {
+              button.textContent = label;
+            }, 1800);
+          } catch (error) {
+            button.textContent = value;
+            window.setTimeout(function () {
+              button.textContent = label;
+            }, 2600);
+          }
+        });
+      });
+
+      document.querySelectorAll(".faq-item").forEach(function (item) {
+        item.addEventListener("toggle", function () {
+          if (!item.open) return;
+
+          document.querySelectorAll(".faq-item[open]").forEach(function (openItem) {
+            if (openItem !== item) {
+              openItem.open = false;
+            }
+          });
+        });
+      });
+    })();
+  </script>
 
   <script>
     (function () {

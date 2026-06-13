@@ -657,6 +657,18 @@ button,
   border-bottom-color: var(--surface);
 }
 
+.planning-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.planning-actions .button {
+  padding: 0.85rem 1.25rem;
+  font-size: 0.88rem;
+}
+
 .venue-photo {
   overflow: hidden;
   border-radius: 18px;
@@ -983,6 +995,10 @@ button,
   font-size: 1rem;
   font-style: normal;
   color: var(--text-on-green);
+}
+
+.copy-bank-button {
+  margin-top: 1rem;
 }
 
 .note-section strong {
@@ -1386,7 +1402,8 @@ button,
   }
 
   .hero-actions .button,
-  .whatsapp-button {
+  .whatsapp-button,
+  .planning-actions .button {
     width: 100%;
   }
 
