@@ -32,12 +32,12 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font-body);
-  background: linear-gradient(160deg, #1F3B2D 0%, #214035 45%, #101F17 100%);
+  background: #1F3B2D;
   color: var(--text);
   position: relative;
   line-height: 1.7;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Editorial headings */
@@ -66,15 +66,7 @@ h2 {
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(196, 154, 90, 0.12), transparent 26%),
-    radial-gradient(circle at 80% 10%, rgba(111, 29, 45, 0.12), transparent 28%),
-    radial-gradient(circle at 50% 100%, rgba(31, 59, 45, 0.22), transparent 30%);
-  pointer-events: none;
-  z-index: -1;
+  display: none;
 }
 
 button,
@@ -90,7 +82,7 @@ main {
   display: grid;
   place-items: center;
   padding: 5rem 1.5rem 5rem;
-  background: linear-gradient(160deg, rgba(20, 40, 31, 0.92), rgba(31, 59, 45, 0.72));
+  background: #1F3B2D;
 }
 
 .hero-inner {
