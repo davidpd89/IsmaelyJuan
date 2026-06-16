@@ -102,10 +102,17 @@
   </div>
   <div class="music-player" aria-label="Reproductor de música">
     <audio id="wedding-audio" src="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" preload="none" loop></audio>
-    <button class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
-      <span class="music-icon" aria-hidden="true">♪</span>
-      <span class="music-text">Música</span>
-    </button>
+    <div class="music-player-controls">
+      <button class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
+        <span class="music-icon" aria-hidden="true">♪</span>
+        <span class="music-text">Música</span>
+      </button>
+      <select class="music-select" aria-label="Elegir canción">
+        <option value="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" selected>Rosalía</option>
+        <option value="assets/audio/thalia-por-amor.mp3">Thalía</option>
+        <option value="assets/audio/pereza-todo.mp3">Pereza</option>
+      </select>
+    </div>
   </div>
 
   <nav class="bottom-nav" aria-label="Navegación rápida">
@@ -119,46 +126,19 @@
   <button class="back-to-top" type="button" aria-label="Volver arriba">↑</button>
 
   <main>
-    <section class="countdown-section" aria-label="Cuenta atrás para la boda">
-      <div class="countdown-inner">
-        <p class="countdown-kicker">Cuenta atrás</p>
-        <p class="countdown-title">Nos vemos en el castillo en</p>
-
-        <div class="countdown-grid" data-countdown="2026-09-12T18:00:00+02:00">
-          <div class="countdown-item">
-            <span class="countdown-number" data-days>000</span>
-            <span class="countdown-label">Días</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" data-hours>00</span>
-            <span class="countdown-label">Horas</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" data-minutes>00</span>
-            <span class="countdown-label">Minutos</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" data-seconds>00</span>
-            <span class="countdown-label">Segundos</span>
-          </div>
-        </div>
-
-        <p class="countdown-finished" hidden>Hoy celebramos. Gracias por estar aquí.</p>
-      </div>
-    </section>
-
     <section class="hero" id="inicio">
       <div class="hero-inner container">
         <div class="hero-copy">
-          <img src="assets/img/favicon.png" alt="" class="hero-monogram" width="52" height="52" decoding="async" aria-hidden="true">
           <p class="eyebrow">Boda de Ismael &amp; Juangui</p>
           <h1>Ismael &amp; Juangui</h1>
-          <p class="hero-text">12 de septiembre de 2026 · <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Castillo de Guadamur, Toledo</a></p>
+          <p class="hero-text">
+            <a href="#" class="text-link js-calendar-google" target="_blank" rel="noopener noreferrer">12 de septiembre de 2026</a>
+            <br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Castillo de Guadamur, Toledo</a>
+          </p>
           <p class="hero-note">El océano nos separaba, la Gran Vía nos unió y Madrid hizo el resto.</p>
           <div class="hero-actions">
             <a href="#rsvp" class="button">Confirmar asistencia</a>
-            <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Guardar fecha</a>
-            <button class="button button-secondary info-modal-trigger" type="button" data-modal-open>Info rápida</button>
           </div>
         </div>
 
@@ -166,28 +146,17 @@
           <div class="photo-card hero-photo">
             <img src="assets/foto%20principal.jpg" alt="Foto principal de Ismaely y Juangui" fetchpriority="high" decoding="async">
           </div>
+          <div class="countdown-compact" data-countdown="2026-09-12T18:00:00+02:00">
+            <span><span data-days>0</span> días</span>
+            <span class="countdown-dot">·</span>
+            <span><span data-hours>00</span> horas</span>
+            <span class="countdown-dot">·</span>
+            <span><span data-minutes>00</span> min</span>
+            <span class="countdown-dot">·</span>
+            <span><span data-seconds>00</span> seg</span>
+          </div>
+          <p class="countdown-finished" hidden>Hoy celebramos. Gracias por estar aquí.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="quick-info-section" aria-label="Datos clave de la boda">
-      <div class="quick-info-inner">
-        <a href="#" class="quick-info-item js-calendar-google" target="_blank" rel="noopener noreferrer">
-          <span>Fecha</span>
-          <strong>12 Sep 2026</strong>
-        </a>
-        <a href="#" class="quick-info-item js-calendar-google" target="_blank" rel="noopener noreferrer">
-          <span>Hora</span>
-          <strong>18:00 h</strong>
-        </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" class="quick-info-item" target="_blank" rel="noopener noreferrer">
-          <span>Lugar</span>
-          <strong>Castillo de Guadamur</strong>
-        </a>
-        <a href="#rsvp" class="quick-info-item">
-          <span>RSVP</span>
-          <strong>Confirmar</strong>
-        </a>
       </div>
     </section>
 
@@ -213,23 +182,17 @@
           <img src="assets/img/history/nuestra-historia-6.jpg" alt="Ismael y Juangui brindando" loading="lazy" decoding="async">
         </div>
       </div>
-      <a href="#castillo" class="section-next">Siguiente: el castillo</a>
     </section>
 
     <section class="venue-section section container" id="castillo">
       <div class="venue-grid">
         <div class="venue-copy">
           <p class="eyebrow">El lugar</p>
-          <img src="assets/img/icons/icon-castillo.png" alt="" class="section-icon section-icon--on-green" width="48" height="48" decoding="async" aria-hidden="true">
+          <img src="assets/img/icons/icon-castillo.png" alt="" class="section-icon section-icon--on-green" width="56" height="56" decoding="async" aria-hidden="true">
           <h2 class="title-md">Castillo de Guadamur</h2>
           <p>Una fortaleza histórica en Guadamur, Toledo, convertida por una noche en escenario de celebración. Piedra, torres, atardecer y una fiesta pensada para vivirse como una gran entrada de gala.</p>
           <div class="venue-links">
             <a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer">Ver ubicación</a>
-          </div>
-          <div class="planning-actions" aria-label="Accesos rápidos para planificar la boda">
-            <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Google Calendar</a>
-            <a href="#" class="button button-secondary js-calendar-ics" download="ismael-juangui-boda.ics">Calendario .ics</a>
-            <button class="button button-secondary copy-address-button" type="button" data-copy-value="Castillo de Guadamur, Guadamur, Toledo" data-copy-label="Copiar dirección" data-copy-success="Dirección copiada">Copiar dirección</button>
           </div>
         </div>
 
@@ -242,32 +205,17 @@
           </div>
         </div>
       </div>
-      <div class="travel-brief" aria-label="Información práctica">
-        <article>
-          <span>Alojamiento recomendado</span>
-          <p>Guadamur es lo más cómodo: casas en Airbnb y Booking a distancia andando del castillo.</p>
-        </article>
-        <article>
-          <span>Transporte</span>
-          <p>Si venís desde Madrid o Toledo, mejor organizar coche o conductor con antelación.</p>
-        </article>
-        <article>
-          <span>Preboda</span>
-          <p>El viernes 11 habrá encuentro en Cobisa, con horario aproximado de 7 a 12.</p>
-        </article>
-      </div>
       <details class="venue-map-panel">
         <summary>Ver mapa aquí</summary>
         <div class="map-frame">
           <iframe title="Mapa del Castillo de Guadamur" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-src="https://www.google.com/maps?q=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo&output=embed"></iframe>
         </div>
       </details>
-      <a href="#programa" class="section-next section-next-on-green">Siguiente: programa</a>
     </section>
 
     <section class="timeline-section section container" id="programa">
       <div class="program-block">
-        <img src="assets/img/icons/icon-ceremonia.png" alt="" class="section-icon section-icon--on-surface" width="48" height="48" decoding="async" aria-hidden="true">
+        <img src="assets/img/icons/icon-ceremonia.png" alt="" class="section-icon section-icon--on-surface" width="56" height="56" decoding="async" aria-hidden="true">
         <h2 class="title-md">Ceremonia</h2>
         <p>El día que llevamos tanto tiempo soñando por fin llega. El 12 de septiembre de 2026, el Castillo de Guadamur abrirá sus puertas a las 17:15 h para que podáis recorrer sus estancias, hacer fotos y disfrutar del lugar donde todo comenzará.</p>
         <p>A las 18:00 h celebraremos nuestra ceremonia, rodeados de quienes forman parte de nuestra historia. Será un momento emocionante y lleno de significado, en el que queremos que estéis muy presentes.</p>
@@ -284,7 +232,7 @@
       </div>
 
       <div class="program-block">
-        <img src="assets/img/icons/icon-copa.png" alt="" class="section-icon section-icon--on-surface" width="48" height="48" decoding="async" aria-hidden="true">
+        <img src="assets/img/icons/icon-copa.png" alt="" class="section-icon section-icon--on-surface" width="56" height="56" decoding="async" aria-hidden="true">
         <h2 class="title-md">Banquete y fiesta</h2>
         <p>Después, disfrutaremos del cóctel y la cena, amenizada por DJ María Latina, que pondrá ritmo y energía a la noche desde el primer momento.</p>
         <p>Y cuando llegue la hora de desmelenarse, continuaremos con barra libre y un auténtico fiestón con DJ Linapary, para bailar hasta que el cuerpo aguante.</p>
@@ -302,12 +250,12 @@
           <img src="assets/img/program/banquete-fiesta.jpg" alt="Ambiente de banquete y fiesta en el castillo" loading="lazy" decoding="async">
         </div>
       </div>
-      <a href="#dresscode" class="section-next">Siguiente: dress code</a>
     </section>
 
     <section class="music-section section container">
       <div class="section-header">
         <p class="eyebrow">Música</p>
+        <img src="assets/img/icons/icon-dj.png" alt="" class="section-icon section-icon--on-green" width="56" height="56" decoding="async" aria-hidden="true">
         <h2 class="title-md">Las DJs de la boda</h2>
         <p>La noche contará con DJ María Latina y DJ Linapary para llevar la celebración del castillo a la pista.</p>
       </div>
@@ -321,7 +269,6 @@
           <h3>DJ Linapary</h3>
         </a>
       </div>
-      <img src="assets/img/icons/icon-dj.png" alt="" class="section-icon section-icon--on-green section-icon--center" width="48" height="48" decoding="async" aria-hidden="true">
       <p class="music-spotify-copy">¿Nos ayudáis con la música? Contadnos qué canciones no pueden faltar en la fiesta. Podéis añadirlas en el siguiente enlace de Spotify (pídenos acceso).</p>
       <a class="button button-secondary music-spotify-button" href="https://open.spotify.com/playlist/44vGFqOKHFAlAov1g9ERmD?si=nmm9Q8jnRq6OP6Iw9d9XAw&amp;pi=8QuQ3ughQ8mPA" target="_blank" rel="noopener noreferrer">Añadir canciones a la playlist</a>
     </section>
@@ -338,7 +285,7 @@
         <p>La inspiración es Met Gala, pero llevada a una noche de castillo: desde lo sobrio impecable hasta lo más teatral.</p>
         <p>Evita chaquetas y vestidos blancos, marfil y tonos demasiado nupciales. Un accesorio blanco, una flor o un detalle puntual sí pueden encajar; lo que no buscamos es un look de novia/o.</p>
         <p class="dresscode-signature">Elegancia, arte y buen rollo.</p>
-        <p><a class="button button-secondary" href="dresscode.pdf" target="_blank" rel="noopener noreferrer">Ver guía completa de dress code</a></p>
+        <p><a class="button button-secondary js-confetti-button" href="dresscode.pdf" target="_blank" rel="noopener noreferrer">Ver guía completa de dress code</a></p>
       </div>
     </section>
 
@@ -351,14 +298,7 @@
       <div class="gallery-single">
         <img src="assets/img/gallery/galeria.jpg" alt="Momento especial de Ismael y Juangui" loading="lazy" decoding="async">
       </div>
-      <a class="button button-secondary gallery-upload-button" href="#" id="subir-fotos">Subir vuestras fotos al álbum (enlace próximamente)</a>
-      <div class="guestbook-preview">
-        <p>También prepararemos un espacio para mensajes y recuerdos cuando tengamos el enlace definitivo.</p>
-        <div class="guestbook-actions">
-          <a class="button button-secondary" href="#" aria-disabled="true">Álbum compartido</a>
-          <a class="button button-secondary" href="#" aria-disabled="true">Dejadnos un mensaje</a>
-        </div>
-      </div>
+      <a class="button button-secondary gallery-upload-button js-confetti-button" href="#" id="subir-fotos">Subir vuestras fotos al álbum (enlace próximamente)</a>
     </section>
 
     <section id="rsvp" class="section container contact-section">
@@ -369,8 +309,7 @@
       </div>
       <p>Por favor, confirma tu asistencia para ayudarnos con la organización de mesas y la celebración.</p>
       <div class="contact-actions">
-        <a href="#" class="button button-secondary questionnaire-button" aria-disabled="true">Rellena este cuestionario</a>
-        <a href="#" class="button button-secondary js-vcard" download="ismael-juangui-contactos.vcf">Guardar contactos</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeg1WtNPxW66n6rwLt4CbyqE2GVl-z0t8Dxg_VxrL_x5TxRQQ/viewform" class="button button-secondary questionnaire-button js-confetti-button" target="_blank" rel="noopener noreferrer">Rellena este cuestionario</a>
         <div class="whatsapp-actions">
           <a href="https://wa.me/34666202546?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Ismael%20y%20Juangui." class="button whatsapp-button">Confirmar con Juangui</a>
           <a href="https://wa.me/34667946999?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Ismael%20y%20Juangui." class="button whatsapp-button">Confirmar con Ismael</a>
@@ -386,7 +325,6 @@
       </div>
       <p>Nuestro mejor regalo sois vosotros. Si aún así queréis tener un detalle con nosotros, aceptamos sobres con mucho cariño para seguir descubriendo el mundo juntos.</p>
       <p class="bank-details"><strong>IBAN:</strong> ES52 1583 0001 1891 1412 1178</p>
-      <button class="button button-secondary copy-bank-button" type="button" data-copy-value="ES5215830001189114121178" data-copy-label="Copiar IBAN" data-copy-success="IBAN copiado">Copiar IBAN</button>
       <div class="bank-extra" aria-label="Datos para transferencias internacionales">
         <p><strong>Código BIC/SWIFT:</strong> REVOESM2</p>
         <p><strong>Beneficiario:</strong> I Balmaseda Galan &amp; J Ruiz Bravo</p>
@@ -451,40 +389,12 @@
           </div>
         </details>
       </div>
-      <p class="last-updated">Última actualización: junio 2026</p>
     </section>
   </main>
 
   <footer class="footer">
     <p><a href="https://www.google.com/maps/search/?api=1&query=Castillo%20de%20Guadamur%2C%20Guadamur%2C%20Toledo" target="_blank" rel="noopener noreferrer" class="text-link">Ismael &amp; Juangui · 12 de septiembre de 2026 · Castillo de Guadamur</a></p>
-    <button class="footer-share" type="button" data-share-button>Compartir invitación</button>
   </footer>
-
-  <div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title" hidden>
-    <div class="info-modal-panel" role="document">
-      <button class="info-modal-close" type="button" aria-label="Cerrar" data-modal-close>×</button>
-      <p class="eyebrow">Info rápida</p>
-      <h2 id="info-modal-title">Lo esencial de la boda</h2>
-      <dl class="info-modal-list">
-        <div>
-          <dt>Fecha y hora</dt>
-          <dd>12 de septiembre de 2026 · 18:00 h</dd>
-        </div>
-        <div>
-          <dt>Lugar</dt>
-          <dd>Castillo de Guadamur, Toledo</dd>
-        </div>
-        <div>
-          <dt>Dress code</dt>
-          <dd>Met Gala en un castillo: elegante, creativo y con personalidad.</dd>
-        </div>
-      </dl>
-      <div class="info-modal-actions">
-        <a href="#rsvp" class="button" data-modal-close>Confirmar</a>
-        <a href="#" class="button button-secondary js-calendar-google" target="_blank" rel="noopener noreferrer">Guardar fecha</a>
-      </div>
-    </div>
-  </div>
 
   <canvas class="confetti-canvas" aria-hidden="true"></canvas>
 
@@ -497,9 +407,6 @@
         startUtc: "20260912T160000Z",
         endUtc: "20260913T030000Z"
       };
-      const pageTitle = "Ismael & Juangui | Boda 12 Sep 2026";
-      const pageUrl = "https://ismaelyjuangui.blog/";
-
       function launchConfetti() {
         const canvas = document.querySelector(".confetti-canvas");
         if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -550,18 +457,6 @@
         frame();
       }
 
-      function setCopiedState(button, value) {
-        const label = button.dataset.copyLabel || button.textContent;
-        const success = button.dataset.copySuccess || "Copiado";
-
-        button.textContent = value || success;
-        button.classList.add("is-copied");
-        window.setTimeout(function () {
-          button.textContent = label;
-          button.classList.remove("is-copied");
-        }, value ? 2600 : 1800);
-      }
-
       const googleParams = new URLSearchParams({
         action: "TEMPLATE",
         text: weddingEvent.title,
@@ -574,120 +469,8 @@
         link.href = "https://calendar.google.com/calendar/render?" + googleParams.toString();
       });
 
-      const icsLines = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//ismaelyjuangui.blog//Wedding//ES",
-        "BEGIN:VEVENT",
-        "UID:ismael-juangui-20260912@ismaelyjuangui.blog",
-        "DTSTAMP:20260613T000000Z",
-        "DTSTART:" + weddingEvent.startUtc,
-        "DTEND:" + weddingEvent.endUtc,
-        "SUMMARY:" + weddingEvent.title,
-        "DESCRIPTION:" + weddingEvent.description,
-        "LOCATION:" + weddingEvent.location,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ];
-
-      const icsHref = "data:text/calendar;charset=utf-8," + encodeURIComponent(icsLines.join("\r\n"));
-      document.querySelectorAll(".js-calendar-ics").forEach(function (link) {
-        link.href = icsHref;
-      });
-
-      document.querySelectorAll(".copy-bank-button, .copy-address-button").forEach(function (button) {
-        button.addEventListener("click", async function () {
-          const value = button.dataset.copyValue;
-
-          try {
-            await navigator.clipboard.writeText(value);
-            setCopiedState(button);
-            launchConfetti();
-          } catch (error) {
-            setCopiedState(button, value);
-          }
-        });
-      });
-
-      document.querySelectorAll(".whatsapp-button").forEach(function (link) {
+      document.querySelectorAll(".whatsapp-button, .js-confetti-button").forEach(function (link) {
         link.addEventListener("click", launchConfetti);
-      });
-
-      const vcard = [
-        "BEGIN:VCARD",
-        "VERSION:3.0",
-        "FN:Ismael y Juangui",
-        "N:Ismael y Juangui;;;;",
-        "TEL;TYPE=CELL:+34667946999",
-        "TEL;TYPE=CELL:+34666202546",
-        "URL:https://ismaelyjuangui.blog/",
-        "END:VCARD"
-      ].join("\r\n");
-
-      document.querySelectorAll(".js-vcard").forEach(function (link) {
-        link.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcard);
-      });
-
-      document.querySelectorAll("[data-share-button]").forEach(function (button) {
-        button.addEventListener("click", async function () {
-          if (navigator.share) {
-            try {
-              await navigator.share({ title: pageTitle, url: pageUrl });
-              return;
-            } catch (error) {
-              if (error.name === "AbortError") return;
-            }
-          }
-
-          try {
-            await navigator.clipboard.writeText(pageUrl);
-            button.textContent = "Enlace copiado";
-            button.classList.add("is-copied");
-            window.setTimeout(function () {
-              button.textContent = "Compartir invitación";
-              button.classList.remove("is-copied");
-            }, 1800);
-          } catch (error) {
-            button.textContent = pageUrl;
-          }
-        });
-      });
-
-      const modal = document.querySelector(".info-modal");
-      const modalOpeners = document.querySelectorAll("[data-modal-open]");
-      const modalClosers = document.querySelectorAll("[data-modal-close]");
-      let lastFocusedElement = null;
-
-      function openModal() {
-        if (!modal) return;
-        lastFocusedElement = document.activeElement;
-        modal.hidden = false;
-        const closeButton = modal.querySelector("[data-modal-close]");
-        if (closeButton) closeButton.focus();
-      }
-
-      function closeModal() {
-        if (!modal) return;
-        modal.hidden = true;
-        if (lastFocusedElement) lastFocusedElement.focus();
-      }
-
-      modalOpeners.forEach(function (button) {
-        button.addEventListener("click", openModal);
-      });
-
-      modalClosers.forEach(function (button) {
-        button.addEventListener("click", closeModal);
-      });
-
-      if (modal) {
-        modal.addEventListener("click", function (event) {
-          if (event.target === modal) closeModal();
-        });
-      }
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") closeModal();
       });
 
       const progressBar = document.querySelector(".scroll-progress-bar");
@@ -793,7 +576,7 @@
         const distance = target - Date.now();
 
         if (distance <= 0) {
-          daysEl.textContent = "000";
+          daysEl.textContent = "0";
           hoursEl.textContent = "00";
           minutesEl.textContent = "00";
           secondsEl.textContent = "00";
@@ -812,7 +595,7 @@
         const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
 
-        daysEl.textContent = String(days).padStart(3, "0");
+        daysEl.textContent = String(days);
         hoursEl.textContent = pad(hours);
         minutesEl.textContent = pad(minutes);
         secondsEl.textContent = pad(seconds);
@@ -866,6 +649,21 @@
           setPlayingState(false);
         }
       });
+
+      const select = document.querySelector(".music-select");
+      if (select) {
+        select.addEventListener("change", function () {
+          const wasPlaying = !audio.paused;
+          audio.src = select.value;
+
+          if (wasPlaying) {
+            audio.play().catch(function (error) {
+              console.warn("No se pudo reproducir el audio:", error);
+              setPlayingState(false);
+            });
+          }
+        });
+      }
     })();
   </script>
 </body>
