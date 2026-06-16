@@ -218,6 +218,26 @@ h2 {
   filter: none;
 }
 
+.section-icon--white {
+  filter: none;
+}
+
+.hero-icon {
+  display: inline-block;
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin: 0 0.4rem 0.2rem 0;
+}
+
+.timeline-icon {
+  display: inline-block;
+  width: 26px;
+  height: auto;
+  vertical-align: middle;
+  margin: 0 0.5rem 0.2rem 0;
+}
+
 h3,
 .music-card h3,
 .contact-name {
