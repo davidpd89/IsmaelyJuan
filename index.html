@@ -104,8 +104,7 @@
     <audio id="wedding-audio" src="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" preload="none" loop></audio>
     <div class="music-player-controls">
       <button class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
-        <span class="music-icon" aria-hidden="true">♪</span>
-        <span class="music-text">Música</span>
+        <span class="music-icon" aria-hidden="true">▶</span>
       </button>
       <select class="music-select" aria-label="Elegir canción">
         <option value="assets/audio/rosalia-yo-x-ti-tu-x-mi.mp3" selected>Rosalía</option>
@@ -191,7 +190,7 @@
       <div class="venue-grid">
         <div class="venue-copy">
           <p class="eyebrow">El lugar</p>
-          <img src="assets/img/icons/icon-castillo.png" alt="" class="section-icon section-icon--on-green" width="56" height="56" decoding="async" aria-hidden="true">
+          <img src="assets/img/icons/icon-castillo.png" alt="" class="section-icon section-icon--on-green" width="72" height="72" decoding="async" aria-hidden="true">
           <h2 class="title-md">Castillo de Guadamur</h2>
           <p>Una fortaleza histórica en Guadamur, Toledo, convertida por una noche en escenario de celebración. Piedra, torres, atardecer y una fiesta pensada para vivirse como una gran entrada de gala.</p>
           <div class="venue-links">
@@ -237,7 +236,7 @@
       <div class="program-block">
         <img src="assets/img/icons/icon-cena.png" alt="" class="section-icon section-icon--on-surface" width="56" height="56" decoding="async" aria-hidden="true">
         <h2 class="title-md">Banquete y fiesta</h2>
-        <p>Después, disfrutaremos del cóctel y la cena, amenizada por DJ María Latina, que pondrá ritmo y energía a la noche desde el primer momento.</p>
+        <p>Después, disfrutaremos del cóctel y la cena, amenizados por DJ María Latina, que pondrá ritmo y energía a la noche desde el primer momento.</p>
         <p>Y cuando llegue la hora de desmelenarse, continuaremos con barra libre y un auténtico fiestón con DJ Linapary, para bailar hasta que el cuerpo aguante.</p>
         <div class="timeline-grid timeline-grid-2">
           <div class="timeline-item">
@@ -292,7 +291,7 @@
       </div>
     </section>
 
-    <section class="section container gallery">
+    <section class="section container gallery" id="galeria">
       <div class="section-header">
         <p class="eyebrow">Galería</p>
         <img src="assets/img/icons/icon-fotos.png" alt="" class="section-icon section-icon--white" width="48" height="48" decoding="async" aria-hidden="true">
@@ -302,7 +301,7 @@
       <div class="gallery-single">
         <img src="assets/img/gallery/galeria.jpg" alt="Momento especial de Ismael y Juangui" loading="lazy" decoding="async">
       </div>
-      <a class="button button-secondary gallery-upload-button js-confetti-button" href="#" id="subir-fotos">Subir vuestras fotos al álbum (enlace próximamente)</a>
+      <a class="button button-secondary gallery-upload-button js-confetti-button" href="https://photos.app.goo.gl/X8uqTAJh4yppQp26A" id="subir-fotos" target="_blank" rel="noopener noreferrer">Subir vuestras fotos al álbum</a>
     </section>
 
     <section id="rsvp" class="section container contact-section">
@@ -380,7 +379,7 @@
             <span class="faq-icon" aria-hidden="true">⌄</span>
           </summary>
           <div class="faq-answer">
-            <p>Lo recogeremos en el cuestionario de invitados: alergias, intolerancias, celiaquía, embarazo, menú especial o cualquier detalle importante.</p>
+            <p>En el <a href="#rsvp" class="text-link">cuestionario de confirmación</a> podéis indicar alergias, intolerancias, celiaquía, embarazo, menú especial o cualquier detalle importante.</p>
           </div>
         </details>
 
@@ -390,7 +389,7 @@
             <span class="faq-icon" aria-hidden="true">⌄</span>
           </summary>
           <div class="faq-answer">
-            <p>Más adelante añadiremos el enlace al álbum compartido para que podáis subir vuestras fotos.</p>
+            <p>Hemos creado un álbum en Google Photos para que podáis compartir con nosotros todo el multimedia del día. El enlace está en <a href="#galeria" class="text-link">«Fotos y momentos»</a>.</p>
           </div>
         </details>
       </div>
@@ -618,15 +617,15 @@
 
       if (!audio || !button) return;
 
-      const text = button.querySelector(".music-text");
+      const icon = button.querySelector(".music-icon");
 
       function setPlayingState(isPlaying) {
         button.classList.toggle("is-playing", isPlaying);
         button.setAttribute("aria-pressed", String(isPlaying));
         button.setAttribute("aria-label", isPlaying ? "Pausar música" : "Reproducir música");
 
-        if (text) {
-          text.textContent = isPlaying ? "Pausar" : "Música";
+        if (icon) {
+          icon.textContent = isPlaying ? "⏸" : "▶";
         }
       }
 
