@@ -210,6 +210,10 @@ h2 {
   opacity: 0.92;
 }
 
+.section-icon--lg {
+  width: 72px;
+}
+
 .section-icon--on-green {
   filter: brightness(0) invert(1);
 }
