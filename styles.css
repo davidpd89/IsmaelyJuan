@@ -211,7 +211,7 @@ h2 {
 }
 
 .section-icon--lg {
-  width: 72px;
+  width: 96px;
 }
 
 .section-icon--on-green {
@@ -1354,9 +1354,9 @@ button,
 }
 
 .music-toggle.is-playing {
-  background: var(--surface);
-  color: var(--green);
-  border-color: var(--surface);
+  background: var(--green);
+  color: var(--text-on-green);
+  border-color: rgba(241, 244, 239, 0.45);
 }
 
 .music-icon {
